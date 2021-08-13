@@ -168,7 +168,7 @@ function store_file($name, $tmpfile, $formatted = false)
         //print the download link of the file
         $url = sprintf('%s://%s/'.$DOWNLOAD_PATH,
                        $HTTP_PROTO,
-                       'paste.seanbehan.ca', 
+                       $_SERVER["SERVER_NAME"], 
                        $basename);
         if ($formatted)
         {
