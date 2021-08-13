@@ -8,7 +8,7 @@ $UPLOAD_TIMEOUT=5*60;       //max. time an upload can take before it times out
 $ID_LENGTH=3;               //length of the random file ID
 $STORE_PATH="files/";       //directory to store uploaded files in
 $LOG_PATH=null;             //path to log uploads + resulting links to
-$DOWNLOAD_PATH="%s";        //the path part of the download url. %s = placeholder for filename
+$DOWNLOAD_PATH="files/%s";        //the path part of the download url. %s = placeholder for filename
 $HTTP_PROTO="https";        //protocol to use in links
 $MAX_EXT_LEN=7;             //max. length for file extensions
 $EXTERNAL_HOOK=null;
@@ -168,7 +168,7 @@ function store_file($name, $tmpfile, $formatted = false)
         //print the download link of the file
         $url = sprintf('%s://%s/'.$DOWNLOAD_PATH,
                        $HTTP_PROTO,
-                       $_SERVER["SERVER_NAME"], 
+                       'paste.seanbehan.ca', 
                        $basename);
         if ($formatted)
         {
